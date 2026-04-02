@@ -15,7 +15,7 @@ export default async function createQuestionCollection(){
         Permission.delete("users")
     ])
     console.log("Question collection is created")
-
+  
     // Creating attributes and Indexes
     await Promise.all([
         databases.createStringAttribute(db, questionCollection, "title", 100, true),
@@ -26,7 +26,7 @@ export default async function createQuestionCollection(){
 
     ]);
     console.log("Question Attributes created")
-
+/*
     // create Index
     await Promise.all([
         databases.createIndex(
@@ -46,4 +46,5 @@ export default async function createQuestionCollection(){
             ['asc']
         )
     ])
+        */
 }
