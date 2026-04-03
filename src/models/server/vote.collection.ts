@@ -18,8 +18,8 @@ export default async function createVoteCollection(){
     await Promise.all([
         databases.createEnumAttribute(db, voteCollection, "type", ["question", "answer"], true),
         databases.createStringAttribute(db,  voteCollection, "typeId", 50, true),
-        databases.createStringAttribute(db, commentCollection, "typeId", 50, true),
-        databases.createStringAttribute(db, commentCollection, "authorId", 50, true)
+        databases.createEnumAttribute(db, voteCollection, "voteStatus", ["upvoted", "downvoted"], true),
+        databases.createStringAttribute(db, voteCollection, "voteById", 50, true)
     ]);
-    console.log("Comment Attributes Created")
+    console.log("Votes Attributes Created")
 }
